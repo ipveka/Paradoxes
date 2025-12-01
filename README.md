@@ -4,8 +4,10 @@ Having fun with probability paradoxes
 
 ## Project Structure
 
-- `app.py`: Main Streamlit app with all paradoxes as tabs (run this file to launch the playground).
-- `app_utils/`: Shared utility functions and helpers for use across all apps, with one module per paradox.
+- `app/`: Contains the Streamlit application.
+  - `app.py`: Main entry point (Home page).
+  - `pages/`: Individual paradox pages.
+- `run_app.py`: Launcher script that installs dependencies and runs the app.
 - `requirements.txt`: Python dependencies for all apps.
 - `README.md`, `LICENSE`: Project documentation and license.
 
@@ -19,9 +21,14 @@ Having fun with probability paradoxes
 
 ## How to Launch the Unified Paradoxes App
 
-Run the following command to launch the main app with all paradoxes as tabs:
+Run the following command to automatically install requirements and launch the app:
 ```bash
-streamlit run app.py
+python run_app.py
+```
+Or manually:
+```bash
+pip install -r requirements.txt
+streamlit run app/app.py
 ```
 
 ## Experiments Included
@@ -57,8 +64,17 @@ streamlit run app.py
   - **Further reading:** [Wikipedia](https://en.wikipedia.org/wiki/Simpson%27s_paradox)
 
 ## Adding a New Experiment
-- Add your new utility module to the `app_utils/` folder.
-- Import and add your new tab to `app.py`.
+- Add your new page file to the `app/pages/` folder.
+- Streamlit will automatically detect it.
+
+## Deployment on Render
+
+1. Create a new **Web Service** on Render.
+2. Connect your GitHub repository.
+3. Use the following settings:
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `streamlit run app/app.py`
+
 
 ---
 
