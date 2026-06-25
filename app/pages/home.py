@@ -1,6 +1,8 @@
 """Home page UI for Probability Paradoxes app."""
 import streamlit as st
 
+from components import render_footer
+
 def show():
     """Display the home page."""
     
@@ -134,12 +136,4 @@ def show():
             st.switch_page("pages/two_envelopes.py")
 
     # Footer with description
-    st.markdown('''
-    <div style="margin-top: 60px;">
-        <p style="text-align: center; color: #718096; font-size: 15px; line-height: 1.7; max-width: 700px; margin: 0 auto 24px;">
-            Explore the most mind-bending puzzles in probability theory through interactive simulations. 
-            Discover why our intuition often fails when dealing with uncertainty, and see the mathematics that reveals the truth.
-        </p>
-        <div style="text-align: center; padding: 32px 0; color: #718096; font-size: 14px;">Built with Streamlit • <a href="https://github.com/ipveka/paradoxes" style="color: #667eea;">ipveka/paradoxes</a></div>
-    </div>
-    ''', unsafe_allow_html=True)
+    render_footer()
