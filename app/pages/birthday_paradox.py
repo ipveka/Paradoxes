@@ -2,86 +2,13 @@ import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
 
+from components import inject_css, render_nav, render_footer
+
 st.set_page_config(page_title="Birthday Paradox", page_icon="🎂", layout="wide", initial_sidebar_state="collapsed")
 
-# Custom CSS with button styling
-st.markdown("""
-<style>
-    .main {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    }
-    
-    /* Stunning Button Styling */
-    .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 12px 20px;
-        font-size: 15px;
-        font-weight: 600;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .stButton > button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        transition: left 0.5s;
-    }
-    
-    .stButton > button:hover::before {
-        left: 100%;
-    }
-    
-    .stButton > button:hover {
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-    }
-    
-    .stButton > button:active {
-        transform: translateY(0) scale(0.98);
-    }
-    
-    .stButton > button:disabled {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        opacity: 0.6;
-        cursor: not-allowed;
-        transform: none;
-        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
-    }
-</style>
-""", unsafe_allow_html=True)
+inject_css()
 
-# Navigation Bar
-col_nav1, col_nav2, col_nav3, col_nav4, col_nav5, col_nav6 = st.columns(6)
-with col_nav1:
-    if st.button("🏠 Home", use_container_width=True):
-        st.switch_page("app.py")
-with col_nav2:
-    if st.button("🎁 Monty Hall", use_container_width=True):
-        st.switch_page("pages/monty_hall.py")
-with col_nav3:
-    st.button("🎂 Birthday", use_container_width=True, disabled=True)
-with col_nav4:
-    if st.button("✉️ Envelopes", use_container_width=True):
-        st.switch_page("pages/two_envelopes.py")
-with col_nav5:
-    if st.button("😴 Beauty", use_container_width=True):
-        st.switch_page("pages/sleeping_beauty.py")
-with col_nav6:
-    if st.button("📊 Simpson's", use_container_width=True):
-        st.switch_page("pages/simpsons_paradox.py")
-
-st.divider()
+render_nav("pages/birthday_paradox.py")
 
 st.title("🎂 Birthday Paradox Simulator")
 st.markdown("### *The mathematics of coincidence*")
@@ -220,13 +147,4 @@ with st.expander("📚 Why is this a paradox? (Click to expand)"):
     **Further reading:** [Wikipedia: Birthday problem](https://en.wikipedia.org/wiki/Birthday_problem)
     """)
 
-# Footer
-st.markdown('''
-<div style="margin-top: 60px;">
-    <p style="text-align: center; color: #718096; font-size: 15px; line-height: 1.7; max-width: 700px; margin: 0 auto 24px;">
-        Explore the most mind-bending puzzles in probability theory through interactive simulations. 
-        Discover why our intuition often fails when dealing with uncertainty, and see the mathematics that reveals the truth.
-    </p>
-    <div style="text-align: center; padding: 32px 0; color: #718096; font-size: 14px;">Built with Streamlit • <a href="https://github.com/ipveka/paradoxes" style="color: #667eea;">ipveka/paradoxes</a></div>
-</div>
-''', unsafe_allow_html=True)
+render_footer()

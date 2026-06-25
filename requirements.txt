@@ -1,6 +1,3 @@
-streamlit
-numpy
-matplotlib
-scipy
-pandas
-plotly
+streamlit>=1.30
+numpy>=1.24
+plotly>=5.0

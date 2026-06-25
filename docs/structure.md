@@ -8,6 +8,7 @@ This document explains the architecture and organization of the Probability Para
 Paradoxes/
 ├── app/
 │   ├── app.py                 # Entry point (redirects to home)
+│   ├── components.py          # Shared CSS, navigation bar, and footer helpers
 │   └── pages/
 │       ├── home.py            # Main landing page
 │       ├── monty_hall.py      # Monty Hall simulator
@@ -54,17 +55,30 @@ Paradoxes/
 
 **Visualization:**
 - **Plotly** - Interactive charts
-- **Matplotlib** - Static plots (if needed)
 
 **Data Processing:**
-- **NumPy** - Numerical computations
-- **Pandas** - Data manipulation (Simpson's Paradox)
+- **NumPy** - Numerical computations (Birthday simulation)
 
 **Styling:**
 - **Custom CSS** - Gradient backgrounds, button effects
 - **Streamlit Theming** - Light theme with custom colors
 
 ## Page Architecture
+
+### Shared Helpers (`app/components.py`)
+
+The CSS, top navigation bar, and footer are identical across pages, so they
+live in one module instead of being copy-pasted:
+
+- `inject_css(extra="")` — injects the shared base styling (gradient
+  background + animated buttons). Pages pass page-specific rules (e.g. the
+  Monty Hall result animation) via the `extra` argument.
+- `render_nav(current)` — renders the 6-button nav bar, disabling the button
+  for the `current` page path.
+- `render_footer()` — renders the shared footer.
+
+The single source of truth for the nav order is the `PAGES` list in
+`components.py`; adding an entry there updates the bar on every page at once.
 
 ### Common Structure
 
@@ -73,6 +87,7 @@ Each paradox page follows this pattern:
 ```python
 import streamlit as st
 import [required libraries]
+from components import inject_css, render_nav, render_footer
 
 # 1. Page Configuration
 st.set_page_config(
@@ -82,32 +97,33 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# 2. Custom CSS Styling
-st.markdown("""<style>...</style>""", unsafe_allow_html=True)
+# 2. Styling + navigation (shared helpers)
+inject_css()                       # optionally inject_css("...page-specific CSS...")
+render_nav("pages/this_page.py")
 
-# 3. Navigation Bar
-# 6 buttons: Home + 5 paradoxes
-
-# 4. Page Title & Subtitle
+# 3. Page Title & Subtitle
 st.title("...")
 st.markdown("### ...")
 
-# 5. Content Sections (in containers)
+# 4. Content Sections (in containers)
 with st.container(border=True):
     # The Setup
     # The Simulation
     # The Results
 
-# 6. Explanation (expandable)
+# 5. Explanation (expandable)
 with st.expander("Why is this a paradox?"):
     # Mathematical explanation
+
+# 6. Footer (shared helper)
+render_footer()
 ```
 
 ### Navigation System
 
 **Top Navigation Bar:**
-- Present on every page (including home)
-- 6 buttons in a row
+- Present on every page (rendered via `render_nav()`)
+- 6 buttons in a row, driven by the `PAGES` list in `components.py`
 - Current page button is disabled
 - Uses `st.switch_page()` for navigation
 
@@ -306,9 +322,10 @@ font="sans serif"
 ### Adding a New Paradox
 
 1. Create `app/pages/new_paradox.py`
-2. Follow the common structure pattern
-3. Add navigation button to all pages
-4. Update `home.py` with new button
+2. Follow the common structure pattern (use the shared helpers)
+3. Add the new page to the `PAGES` list in `components.py` — this updates the
+   nav bar on every page automatically
+4. Update `home.py` with a launch button
 5. Add documentation to `concepts.md`
 
 ### Customizing Styling
@@ -327,10 +344,7 @@ font="sans serif"
 
 ```
 streamlit      # Web framework
-numpy          # Numerical computing
-matplotlib     # Plotting (backup)
-scipy          # Scientific computing
-pandas         # Data manipulation
+numpy          # Numerical computing (Birthday simulation)
 plotly         # Interactive charts
 ```
 
