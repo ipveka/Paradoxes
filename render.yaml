@@ -1,0 +1,36 @@
+# Render Blueprint — deploys the FastAPI backend and the Next.js frontend as two
+# web services. See docs/deploy-render.md for the full walkthrough, including the
+# two environment variables you must set after the first deploy.
+services:
+  # --- Backend: FastAPI + NumPy --------------------------------------------
+  - type: web
+    name: paradoxes-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      # Set to the frontend's public URL so browser requests pass CORS.
+      # e.g. https://paradoxes-web.onrender.com
+      - key: ALLOWED_ORIGINS
+        sync: false
+
+  # --- Frontend: Next.js ----------------------------------------------------
+  - type: web
+    name: paradoxes-web
+    runtime: node
+    rootDir: frontend
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22.16.0"
+      # Baked into the client AT BUILD TIME — set this before the build runs.
+      # e.g. https://paradoxes-api.onrender.com
+      - key: NEXT_PUBLIC_API_URL
+        sync: false

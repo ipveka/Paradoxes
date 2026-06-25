@@ -1,81 +1,92 @@
-# Paradoxes
+# 🧩 Paradoxes
 
-Having fun with probability paradoxes
+> Where intuition meets mathematics — an interactive, simulation-driven website
+> for the most mind-bending paradoxes in probability and statistics.
 
-## Project Structure
+Five famous paradoxes that fool almost everyone. Each one pairs a plain-language
+explanation with **live Monte Carlo simulations** so you can watch the
+counterintuitive answer emerge from real data.
 
-- `app/`: Contains the Streamlit application.
-  - `app.py`: Main entry point (Home page).
-  - `pages/`: Individual paradox pages.
-- `run_app.py`: Launcher script that installs dependencies and runs the app.
-- `requirements.txt`: Python dependencies for all apps.
-- `README.md`, `LICENSE`: Project documentation and license.
+- 🚪 **Monty Hall** — why switching doors wins twice as often
+- 🎂 **Birthday Paradox** — 23 people, 50/50 odds of a shared birthday
+- ✉️ **Two Envelopes** — the switch that looks profitable but isn't
+- 😴 **Sleeping Beauty** — is it ½ or ⅓? Philosophers still argue
+- 📊 **Simpson's Paradox** — when the parts and the whole disagree
 
-## Installation
+## Stack
 
-1. Clone the repository and navigate to its directory.
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+| Layer | Tech |
+| ----- | ---- |
+| Frontend | Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion · Recharts |
+| Backend | FastAPI · NumPy · Pydantic |
+| Deploy | Render Blueprint (two web services) |
 
-## How to Launch the Unified Paradoxes App
+The simulations run server-side in Python and are exposed as a small JSON API;
+the frontend calls that API and animates the results. See
+[`docs/architecture.md`](docs/architecture.md) for the full picture.
 
-Run the following command to automatically install requirements and launch the app:
+## Quick start
+
+You'll need **Python 3.11+** and **Node 18+**. Run the two services in separate
+terminals.
+
+### 1. Backend (API on :8000)
+
 ```bash
-python run_app.py
+cd backend
+pip install -r requirements-dev.txt
+uvicorn app.main:app --reload          # http://localhost:8000  (docs at /docs)
 ```
-Or manually:
+
+### 2. Frontend (website on :3000)
+
 ```bash
-pip install -r requirements.txt
-streamlit run app/app.py
+cd frontend
+npm install
+cp .env.example .env.local             # defaults to http://localhost:8000
+npm run dev                            # http://localhost:3000
 ```
 
-## Experiments Included
+Open http://localhost:3000, head to **Monty Hall**, and hit *Run simulation*.
 
-- **Monty Hall**: 
-  - **Description:** Simulate the classic game show problem. You pick one of three doors; Monty reveals a goat behind another door, and you choose whether to switch. 
-  - **Why it's a paradox:** Intuitively, it seems like switching or staying should be 50/50, but switching actually gives you a 2/3 chance of winning. The host's knowledge and action change the probabilities in a non-obvious way. This paradox highlights how our intuition can be misled by conditional probability and the importance of considering all available information.
-  - **Key insight:** Monty's action gives you information, making switching the better strategy. The problem is a classic example of how probability can defy our expectations.
-  - **Further reading:** [Wikipedia](https://en.wikipedia.org/wiki/Monty_Hall_problem)
+## Tests
 
-- **Birthday Paradox**: 
-  - **Description:** Explore how likely it is for at least two people in a group to share a birthday. 
-  - **Why it's a paradox:** Our intuition underestimates how quickly the probability grows. With just 23 people, there's over a 50% chance of a shared birthday, due to the rapid growth in the number of possible pairs. This paradox demonstrates the counterintuitive nature of combinatorics and probability in everyday situations.
-  - **Key insight:** Probability grows with the number of pairs, not just the number of people. The paradox is a great illustration of how human intuition often fails with large numbers and combinations.
-  - **Further reading:** [Wikipedia](https://en.wikipedia.org/wiki/Birthday_problem)
+```bash
+cd backend && pytest                   # simulation math + API contract
+cd frontend && npm run build           # type-checks and pre-renders every page
+```
 
-- **Two Envelopes Paradox**: 
-  - **Description:** Pick one of two envelopes, each with money (one has twice as much as the other). Should you switch? 
-  - **Why it's a paradox:** The expected value calculation seems to suggest you should always switch, but this leads to a logical loop. The reasoning ignores the prior distribution of amounts in the envelopes. This paradox exposes the subtleties of expectation and probability, and the importance of understanding the underlying assumptions in probabilistic reasoning.
-  - **Key insight:** The calculation is misleading because it doesn't account for how the amounts were chosen. The paradox is a reminder to carefully consider the setup of probability problems.
-  - **Further reading:** [Wikipedia](https://en.wikipedia.org/wiki/Two_envelopes_problem)
+## Project layout
 
-- **Sleeping Beauty Problem**: 
-  - **Description:** Simulate the philosophical puzzle about self-locating belief. After being awakened, what probability should Sleeping Beauty assign to the coin toss being heads? 
-  - **Why it's a paradox:** The answer seems to depend on how you count possibilities: is it 1/2 or 1/3? Philosophers and mathematicians still debate the correct answer. This paradox explores the difference between subjective and objective probability, and how to update beliefs when you have limited information about your own situation.
-  - **Key insight:** The problem highlights the difference between subjective and objective probability, and how to update beliefs with self-locating uncertainty. It is a central example in the philosophy of probability.
-  - **Further reading:** [Wikipedia](https://en.wikipedia.org/wiki/Sleeping_Beauty_problem)
+```
+backend/            FastAPI service (simulations, API, tests)
+frontend/           Next.js website (pages, components, design system)
+legacy/streamlit/   Original Streamlit prototype (kept for reference)
+docs/
+├── architecture.md   How the pieces fit together
+├── deploy-render.md  Step-by-step Render deployment
+└── concepts.md       The mathematics behind each paradox
+render.yaml         One-command deploy of both services
+```
 
-- **Simpson's Paradox**: 
-  - **Description:** See how trends in different groups can reverse when data is aggregated. 
-  - **Why it's a paradox:** Aggregated data can hide or reverse trends present in subgroups, leading to misleading conclusions. Simpson's Paradox is a powerful reminder that data must be analyzed carefully, and that hidden variables can dramatically change the story told by statistics.
-  - **Key insight:** Simpson's Paradox warns us to always check for hidden variables before drawing conclusions from data. It is a classic example of the dangers of ignoring confounding factors in data analysis.
-  - **Further reading:** [Wikipedia](https://en.wikipedia.org/wiki/Simpson%27s_paradox)
+## Deploy
 
-## Adding a New Experiment
-- Add your new page file to the `app/pages/` folder.
-- Streamlit will automatically detect it.
+A [`render.yaml`](render.yaml) Blueprint provisions both services on Render's
+free plan. Full walkthrough — including the two environment variables to set — is
+in [`docs/deploy-render.md`](docs/deploy-render.md).
 
-## Deployment on Render
+## Adding a new paradox
 
-1. Create a new **Web Service** on Render.
-2. Connect your GitHub repository.
-3. Use the following settings:
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `streamlit run app/app.py`
+1. **Backend:** add a pure simulation in `backend/app/simulations/`, a schema in
+   `schemas.py`, and a route in `routers/paradoxes.py` (plus a test).
+2. **Frontend:** add the response type to `lib/api.ts`, an entry to
+   `lib/paradoxes.ts`, and a widget in `components/paradox/` registered in
+   `ParadoxView.tsx`.
 
+The home grid, navbar, and routing update automatically from the registry.
 
----
+## License
 
-**Source:** This project is maintained at [ipveka/paradoxes](https://github.com/ipveka/paradoxes)
+MIT — see [LICENSE](LICENSE).
+
+**Maintained at [ipveka/paradoxes](https://github.com/ipveka/paradoxes).**
