@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--bg:#080711;--panel:#120f24;--cyan:#22d3ee;--violet:#a855f7;--pink:#f472b6;--lime:#a3e635;--ink:#e7e3ff;--mut:#8b86b8;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:ui-sans-serif,system-ui,'Segoe UI',sans-serif;}
+  body{background:radial-gradient(60rem 40rem at 80% -10%,rgba(168,85,247,.25),transparent 60%),radial-gradient(50rem 40rem at 0% 10%,rgba(34,211,238,.18),transparent 55%),var(--bg);color:var(--ink);min-height:100vh;
+    background-image:linear-gradient(rgba(168,85,247,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.06) 1px,transparent 1px);background-size:auto,auto,40px 40px,40px 40px;}
+  .wrap{max-width:1120px;margin:0 auto;padding:24px;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border:1px solid rgba(168,85,247,.3);border-radius:14px;background:rgba(18,15,36,.6);backdrop-filter:blur(8px);}
+  .brand{font-weight:800;font-size:20px;letter-spacing:.5px;}
+  .brand span{background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .links{display:flex;gap:8px;font-family:ui-monospace,monospace;font-size:12px;color:var(--mut);}
+  .links a{padding:6px 12px;border:1px solid rgba(139,134,184,.25);border-radius:8px;}
+  .hero{text-align:center;padding:70px 0 30px;}
+  .tag{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:3px;color:var(--cyan);text-transform:uppercase;}
+  h1{font-size:72px;line-height:1;letter-spacing:-2px;font-weight:800;margin:20px 0;}
+  h1 .g{background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 24px rgba(168,85,247,.5));}
+  .sub{color:var(--mut);font-size:19px;max-width:600px;margin:0 auto;}
+  .cta{margin-top:26px;display:flex;gap:14px;justify-content:center;}
+  .cta a{padding:14px 24px;border-radius:12px;font-weight:700;font-size:15px;}
+  .cta .p{background:linear-gradient(90deg,var(--violet),var(--cyan));color:#08060f;box-shadow:0 0 30px rgba(168,85,247,.5);}
+  .cta .s{border:1px solid rgba(139,134,184,.4);color:var(--ink);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;}
+  .card{position:relative;padding:22px;border-radius:16px;background:rgba(18,15,36,.7);border:1px solid rgba(139,134,184,.2);backdrop-filter:blur(6px);overflow:hidden;}
+  .card::before{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(135deg,var(--cyan),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.6;}
+  .ic{font-size:34px;filter:drop-shadow(0 0 14px rgba(34,211,238,.6));}
+  .card h3{margin:12px 0 6px;font-size:19px;}
+  .card p{color:var(--mut);font-size:14px;}
+  .stat{font-family:ui-monospace,monospace;margin-top:14px;font-size:13px;color:var(--lime);}
+  .stat .bar{display:inline-block;height:6px;width:120px;background:rgba(163,230,53,.18);border-radius:4px;vertical-align:middle;margin-left:8px;position:relative;}
+  .stat .bar i{position:absolute;left:0;top:0;height:6px;width:67%;background:var(--lime);border-radius:4px;box-shadow:0 0 12px var(--lime);}
+</style></head><body><div class="wrap">
+  <nav><div class="brand">🧩 <span>PARADOXES</span></div><div class="links"><a>~/monty</a><a>~/birthday</a><a>~/all</a></div></nav>
+  <section class="hero">
+    <div class="tag">// the arcade of chance</div>
+    <h1>Beat your <span class="g">intuition</span></h1>
+    <p class="sub">Five probability paradoxes, rendered as live simulations. Pull the lever, watch the odds defy your gut.</p>
+    <div class="cta"><a class="p">▶ Play Monty Hall</a><a class="s">Browse all five</a></div>
+  </section>
+  <section class="grid">
+    <div class="card"><div class="ic">🚪</div><h3>Monty Hall</h3><p>Switch and win twice as often.</p><div class="stat">switch_rate 67%<span class="bar"><i></i></span></div></div>
+    <div class="card"><div class="ic">🎂</div><h3>Birthday</h3><p>23 people cross the 50% line.</p><div class="stat">p_match 50.7%</div></div>
+    <div class="card"><div class="ic">✉️</div><h3>Two Envelopes</h3><p>The switch that gains nothing.</p><div class="stat">edge +0.0%</div></div>
+    <div class="card"><div class="ic">😴</div><h3>Sleeping Beauty</h3><p>½ or ⅓? Run it and decide.</p><div class="stat">p_heads 33%</div></div>
+    <div class="card"><div class="ic">📊</div><h3>Simpson's</h3><p>Parts vs whole — they flip.</p><div class="stat">reversal TRUE</div></div>
+  </section>
+</div></body></html>

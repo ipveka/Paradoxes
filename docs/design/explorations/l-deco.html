@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--bg:#0c2a26;--bg2:#0a201d;--gold:#d9b25a;--gold2:#f0d699;--cream:#f3ead2;--dim:#8aa39b;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Georgia,'Times New Roman',serif;}
+  body{background:radial-gradient(120% 80% at 50% 0%,#13403a,var(--bg) 60%);color:var(--cream);}
+  .wrap{max-width:1020px;margin:0 auto;padding:30px;}
+  nav{display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);border-bottom:1px solid var(--gold);padding:12px 6px;}
+  nav .brand{font-size:20px;letter-spacing:4px;text-transform:uppercase;color:var(--gold2);}
+  nav .links{display:flex;gap:24px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);}
+  .hero{text-align:center;padding:50px 0 24px;position:relative;}
+  .fan{width:120px;height:60px;margin:0 auto 18px;background:conic-gradient(from 180deg at 50% 100%,var(--gold) 0 12deg,transparent 12deg 24deg,var(--gold) 24deg 36deg,transparent 36deg 48deg,var(--gold) 48deg 60deg,transparent 60deg 72deg,var(--gold) 72deg 84deg,transparent 84deg 96deg,var(--gold) 96deg 108deg,transparent 108deg 120deg,var(--gold) 120deg 132deg,transparent 132deg 144deg,var(--gold) 144deg 156deg,transparent 156deg 168deg,var(--gold) 168deg 180deg);opacity:.85;}
+  .ornament{color:var(--gold);letter-spacing:6px;font-size:14px;}
+  h1{font-size:66px;line-height:1.02;letter-spacing:2px;margin:14px 0;text-transform:uppercase;font-weight:400;}
+  h1 .g{color:var(--gold2);font-style:italic;}
+  .rule{width:220px;height:1px;background:var(--gold);margin:18px auto;position:relative;}
+  .rule::before,.rule::after{content:'◆';position:absolute;top:-9px;color:var(--gold);font-size:12px;}
+  .rule::before{left:-18px;}.rule::after{right:-18px;}
+  .sub{font-size:18px;line-height:1.6;color:#d6cdb0;max-width:560px;margin:0 auto;font-style:italic;}
+  .cta{margin-top:26px;}
+  .cta a{display:inline-block;border:1px solid var(--gold);color:var(--gold2);padding:13px 26px;margin:0 8px;font-size:13px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;}
+  .cta a.f{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--bg2);font-weight:700;}
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:48px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);}
+  .col{padding:24px 12px;text-align:center;border-right:1px solid rgba(217,178,90,.3);}
+  .col:last-child{border-right:none;}
+  .col .rn{color:var(--gold);font-size:13px;letter-spacing:2px;}
+  .col .em{font-size:30px;margin:14px 0;}
+  .col h3{font-size:15px;letter-spacing:1.5px;text-transform:uppercase;}
+  .col p{font-size:12px;color:var(--dim);margin-top:8px;font-style:italic;}
+</style></head><body><div class="wrap">
+  <nav><div class="brand">✦ Paradoxes ✦</div><div class="links"><span>The Salon</span><span>Simulations</span><span>Index</span></div></nav>
+  <section class="hero">
+    <div class="fan"></div>
+    <div class="ornament">— THE GRAND THEATRE OF CHANCE —</div>
+    <h1>The Art of<br>being <span class="g">wrong</span></h1>
+    <div class="rule"></div>
+    <p class="sub">Five exquisite paradoxes of probability, presented with a little gold leaf — and settled by live simulation.</p>
+    <div class="cta"><a class="f">Enter · Monty Hall</a><a>The Full Programme</a></div>
+  </section>
+  <section class="grid">
+    <div class="col"><div class="rn">I</div><div class="em">🚪</div><h3>Monty Hall</h3><p>Switch &amp; prosper</p></div>
+    <div class="col"><div class="rn">II</div><div class="em">🎂</div><h3>Birthday</h3><p>Three &amp; twenty</p></div>
+    <div class="col"><div class="rn">III</div><div class="em">✉️</div><h3>Envelopes</h3><p>A hollow gain</p></div>
+    <div class="col"><div class="rn">IV</div><div class="em">😴</div><h3>Beauty</h3><p>A half, a third</p></div>
+    <div class="col"><div class="rn">V</div><div class="em">📊</div><h3>Simpson's</h3><p>Part vs whole</p></div>
+  </section>
+</div></body></html>

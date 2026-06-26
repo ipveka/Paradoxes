@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--paper:#efe9dd;--ink:#171513;--red:#d6231f;--mut:#6b645a;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Arial Narrow','Arial Black',Arial,sans-serif;}
+  body{background:var(--paper);color:var(--ink);overflow-x:hidden;}
+  .wrap{max-width:1060px;margin:0 auto;padding:24px;position:relative;}
+  nav{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--paper);padding:12px 20px;}
+  nav .brand{font-family:'Arial Black';font-size:22px;text-transform:uppercase;letter-spacing:1px;}
+  nav .links{display:flex;gap:18px;font-size:13px;text-transform:uppercase;letter-spacing:1px;}
+  nav .links span{color:var(--red);}
+  .hero{position:relative;margin-top:30px;overflow:hidden;border:3px solid var(--ink);}
+  .band{position:absolute;top:-40px;right:-120px;width:520px;height:140px;background:var(--red);transform:rotate(-18deg);z-index:0;}
+  .inner{position:relative;z-index:1;padding:42px 34px;}
+  .kick{font-family:'Arial Black';font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--red);}
+  h1{font-family:'Arial Black',Arial,sans-serif;font-size:80px;line-height:.9;text-transform:uppercase;letter-spacing:-2px;margin:10px 0;max-width:760px;}
+  h1 .w{color:var(--paper);background:var(--red);padding:0 8px;display:inline-block;transform:skewX(-8deg);}
+  .sub{font-family:Arial;font-size:16px;line-height:1.6;max-width:520px;margin-top:14px;font-weight:700;}
+  .cta{margin-top:20px;}
+  .cta a{font-family:'Arial Black';text-transform:uppercase;font-size:14px;letter-spacing:1px;padding:13px 22px;text-decoration:none;display:inline-block;margin-right:10px;}
+  .cta .p{background:var(--ink);color:var(--paper);}.cta .s{border:3px solid var(--ink);color:var(--ink);}
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px;}
+  .card{border:3px solid var(--ink);padding:16px 12px;background:var(--paper);}
+  .card:nth-child(even){background:var(--ink);color:var(--paper);}
+  .card .n{font-family:'Arial Black';font-size:38px;line-height:1;color:var(--red);}
+  .card .em{font-size:26px;margin:10px 0;}
+  .card h3{font-family:'Arial Black';font-size:15px;text-transform:uppercase;letter-spacing:.5px;}
+  .card p{font-family:Arial;font-size:11.5px;margin-top:5px;font-weight:700;opacity:.85;line-height:1.4;}
+</style></head><body><div class="wrap">
+  <nav><div class="brand">▰ Paradoxes</div><div class="links"><span>Monty</span><span>Birthday</span><span>Index</span></div></nav>
+  <section class="hero"><div class="band"></div><div class="inner">
+    <div class="kick">★ Workers of probability, unite ★</div>
+    <h1>Reject the<br><span class="w">obvious</span> answer</h1>
+    <p class="sub">Five paradoxes that overthrow common sense — each one verified by the honest labour of a million simulations.</p>
+    <div class="cta"><a class="p">▶ Run Monty Hall</a><a class="s">The Index</a></div>
+  </div></section>
+  <section class="grid">
+    <div class="card"><div class="n">1</div><div class="em">🚪</div><h3>Monty Hall</h3><p>Switch wins two thirds.</p></div>
+    <div class="card"><div class="n">2</div><div class="em">🎂</div><h3>Birthday</h3><p>23 for even odds.</p></div>
+    <div class="card"><div class="n">3</div><div class="em">✉️</div><h3>Envelopes</h3><p>A switch worth nil.</p></div>
+    <div class="card"><div class="n">4</div><div class="em">😴</div><h3>Beauty</h3><p>Half or a third.</p></div>
+    <div class="card"><div class="n">5</div><div class="em">📊</div><h3>Simpson's</h3><p>Part defies whole.</p></div>
+  </section>
+</div></body></html>

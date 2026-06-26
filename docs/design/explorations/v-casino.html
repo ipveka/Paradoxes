@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--felt:#0c6b3f;--felt2:#085230;--gold:#e7c558;--gold2:#f6e3a1;--cream:#f7f1df;--red:#c62828;--ink:#15140f;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Georgia,'Times New Roman',serif;}
+  body{color:var(--cream);background:radial-gradient(120% 90% at 50% 0%,#149157,var(--felt) 45%,var(--felt2));}
+  .wrap{max-width:1040px;margin:0 auto;padding:28px;}
+  nav{display:flex;justify-content:space-between;align-items:center;border:2px solid var(--gold);border-radius:40px;padding:11px 24px;background:rgba(0,0,0,.18);}
+  .brand{font-size:21px;letter-spacing:1px;color:var(--gold2);}
+  .links{display:flex;gap:20px;font-size:13px;letter-spacing:1px;color:#cfe6d6;text-transform:uppercase;}
+  .hero{text-align:center;padding:48px 0 26px;}
+  .suits{font-size:22px;letter-spacing:8px;}
+  .suits .r{color:var(--red);}.suits .b{color:#0a0a0a;}
+  .tag{margin-top:10px;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+  h1{font-size:66px;line-height:1.04;margin:12px 0;color:var(--gold2);text-shadow:0 2px 0 #6b531e,0 3px 8px rgba(0,0,0,.4);}
+  h1 em{font-style:italic;color:var(--cream);}
+  .sub{font-size:18px;color:#e6f0e8;max-width:560px;margin:0 auto;font-style:italic;}
+  .cta{margin-top:24px;display:flex;gap:16px;justify-content:center;}
+  .cta a{font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:14px 26px;border-radius:30px;text-decoration:none;}
+  .cta .p{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#4a3a0c;font-weight:700;box-shadow:0 4px 0 #8a6f24;}
+  .cta .s{border:2px solid var(--gold);color:var(--gold2);}
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:42px;}
+  .card{background:var(--cream);color:var(--ink);border-radius:12px;padding:16px 12px;position:relative;box-shadow:0 8px 20px rgba(0,0,0,.3);min-height:182px;border:1px solid #d8caa0;}
+  .card .corner{position:absolute;top:8px;left:10px;font-size:13px;font-weight:700;}
+  .card .corner.br{top:auto;left:auto;bottom:8px;right:10px;transform:rotate(180deg);}
+  .red{color:var(--red);}.blk{color:#111;}
+  .card .em{font-size:34px;text-align:center;margin:24px 0 10px;}
+  .card h3{font-size:15px;text-align:center;}
+  .card p{font-size:11.5px;text-align:center;color:#5a5340;margin-top:5px;line-height:1.4;}
+</style></head><body><div class="wrap">
+  <nav><div class="brand">♠ Paradoxes ♥</div><div class="links"><span>Monty</span><span>Birthday</span><span>The Table</span></div></nav>
+  <section class="hero">
+    <div class="suits"><span class="b">♠</span> <span class="r">♥</span> <span class="r">♦</span> <span class="b">♣</span></div>
+    <div class="tag">— the house of probability —</div>
+    <h1>The odds are<br><em>stranger</em> than you think</h1>
+    <p class="sub">Five famous paradoxes dealt straight from the deck — and every hand settled by live simulation.</p>
+    <div class="cta"><a class="p">Deal me in · Monty Hall</a><a class="s">See the table</a></div>
+  </section>
+  <section class="grid">
+    <div class="card"><span class="corner red">A♦</span><span class="corner br red">A♦</span><div class="em">🚪</div><h3>Monty Hall</h3><p>Switch &amp; win two thirds.</p></div>
+    <div class="card"><span class="corner blk">K♠</span><span class="corner br blk">K♠</span><div class="em">🎂</div><h3>Birthday</h3><p>23 for even odds.</p></div>
+    <div class="card"><span class="corner red">Q♥</span><span class="corner br red">Q♥</span><div class="em">✉️</div><h3>Two Envelopes</h3><p>A switch worth nil.</p></div>
+    <div class="card"><span class="corner blk">J♣</span><span class="corner br blk">J♣</span><div class="em">😴</div><h3>Sleeping Beauty</h3><p>Half or a third?</p></div>
+    <div class="card"><span class="corner red">10♦</span><span class="corner br red">10♦</span><div class="em">📊</div><h3>Simpson's</h3><p>Part defies whole.</p></div>
+  </section>
+</div></body></html>

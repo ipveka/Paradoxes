@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--board:#243b32;--chalk:#f3f0e7;--ylw:#f4d35e;--pink:#f08aa8;--blue:#8ecae6;--mut:#a9b8ad;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Comic Sans MS','Segoe Print',ui-rounded,'Trebuchet MS',cursive;}
+  body{background:radial-gradient(120% 100% at 50% 0%,#2c463b,var(--board));color:var(--chalk);}
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.05;background:radial-gradient(circle at 30% 40%,#fff 0,transparent 2px),radial-gradient(circle at 70% 60%,#fff 0,transparent 2px);background-size:7px 7px,11px 11px;}
+  .frame{max-width:1040px;margin:22px auto;border:12px solid #6b4a2b;border-radius:6px;box-shadow:0 0 0 3px #4a3b2b,inset 0 0 40px rgba(0,0,0,.4);padding:0;}
+  .wrap{padding:28px 34px;}
+  nav{display:flex;justify-content:space-between;align-items:center;border-bottom:2px dashed var(--mut);padding-bottom:12px;}
+  .brand{font-size:22px;text-shadow:0 0 8px rgba(255,255,255,.25);}
+  .links{display:flex;gap:18px;font-size:14px;color:var(--mut);}
+  .hero{text-align:center;padding:40px 0 24px;position:relative;}
+  .tag{font-size:15px;color:var(--ylw);text-shadow:0 0 8px rgba(244,211,94,.4);}
+  h1{font-size:58px;line-height:1.08;margin:14px 0;text-shadow:0 0 10px rgba(255,255,255,.2);}
+  h1 u{text-decoration-color:var(--pink);text-decoration-thickness:3px;}
+  .eq{color:var(--blue);font-size:20px;margin-top:6px;}
+  .sub{font-size:18px;color:#dfe6df;max-width:560px;margin:10px auto 0;}
+  .cta{margin-top:22px;display:flex;gap:16px;justify-content:center;}
+  .cta a{font-size:16px;padding:12px 22px;border:2px solid var(--chalk);border-radius:14px;color:var(--chalk);text-decoration:none;box-shadow:0 0 10px rgba(255,255,255,.12);}
+  .cta .p{background:rgba(244,211,94,.16);border-color:var(--ylw);color:var(--ylw);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;padding-bottom:8px;}
+  .card{border:2px dashed var(--chalk);border-radius:14px;padding:18px;background:rgba(255,255,255,.03);}
+  .ic{font-size:32px;}
+  .card h3{font-size:21px;margin:8px 0 5px;}
+  .card p{font-size:14px;color:var(--mut);}
+  .card .chalk{margin-top:8px;font-size:13px;color:var(--ylw);}
+</style></head><body>
+  <div class="frame"><div class="wrap">
+  <nav><div class="brand">📐 Probability 101</div><div class="links"><span>Monty</span><span>Birthday</span><span>Syllabus</span></div></nav>
+  <section class="hero">
+    <div class="tag">✎ today's lesson</div>
+    <h1>Your gut flunks<br><u>probability</u></h1>
+    <div class="eq">P(switch wins) = 2 / 3 &nbsp;≠&nbsp; ½</div>
+    <p class="sub">Five classic paradoxes, worked out on the board and proven by live simulation. Pull up a chair.</p>
+    <div class="cta"><a class="p">▶ Start: Monty Hall</a><a>See the syllabus</a></div>
+  </section>
+  <section class="grid">
+    <div class="card"><div class="ic">🚪</div><h3>Monty Hall</h3><p>Switch and win two thirds.</p><div class="chalk">∴ switch = 0.67</div></div>
+    <div class="card"><div class="ic">🎂</div><h3>Birthday</h3><p>23 people, even odds.</p><div class="chalk">∴ n = 23</div></div>
+    <div class="card"><div class="ic">✉️</div><h3>Two Envelopes</h3><p>A switch worth nothing.</p><div class="chalk">∴ edge = 0</div></div>
+    <div class="card"><div class="ic">😴</div><h3>Sleeping Beauty</h3><p>Half, or a third?</p><div class="chalk">∴ P(H) = 1/3</div></div>
+    <div class="card"><div class="ic">📊</div><h3>Simpson's</h3><p>Parts contradict whole.</p><div class="chalk">∴ reversal!</div></div>
+  </section>
+  </div></div>
+</body></html>

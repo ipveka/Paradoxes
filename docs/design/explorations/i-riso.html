@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--paper:#f4efe1;--ink:#23201c;--blue:#2b4cff;--pink:#ff3b8d;--blend:multiply;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Courier New',ui-monospace,monospace;}
+  body{background:var(--paper);color:var(--ink);
+    background-image:radial-gradient(rgba(43,76,255,.16) 1px,transparent 1.4px);background-size:7px 7px;}
+  .wrap{max-width:1060px;margin:0 auto;padding:30px;}
+  nav{display:flex;justify-content:space-between;align-items:center;border:2px solid var(--ink);padding:12px 18px;background:var(--pink);color:#fff;mix-blend-mode:var(--blend);}
+  nav .brand{font-weight:700;font-size:18px;letter-spacing:1px;text-transform:uppercase;}
+  nav .links{display:flex;gap:18px;font-size:12px;text-transform:uppercase;letter-spacing:1px;}
+  .hero{margin-top:54px;position:relative;}
+  .stamp{display:inline-block;border:2px solid var(--blue);color:var(--blue);font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;transform:rotate(-1.5deg);}
+  h1{font-family:'Arial Black',Arial,sans-serif;font-size:82px;line-height:.92;letter-spacing:-3px;text-transform:uppercase;margin:18px 0;position:relative;}
+  h1 .layer{color:var(--blue);}
+  h1 .off{position:absolute;left:3px;top:3px;color:var(--pink);mix-blend-mode:var(--blend);z-index:-1;}
+  .sub{font-size:16px;line-height:1.6;max-width:560px;}
+  .cta{margin-top:24px;display:flex;gap:14px;}
+  .cta a{font-family:'Arial Black',Arial,sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:1px;padding:13px 20px;border:2px solid var(--ink);text-decoration:none;}
+  .cta .p{background:var(--blue);color:#fff;}.cta .s{background:transparent;color:var(--ink);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:54px;border:2px solid var(--ink);}
+  .card{border:1px solid var(--ink);padding:20px;}
+  .card .row{display:flex;align-items:center;gap:12px;}
+  .ic{font-size:30px;filter:saturate(0) contrast(1.1);}
+  .num{font-family:'Arial Black';font-size:30px;color:var(--blue);}
+  .card h3{font-family:'Arial Black',Arial,sans-serif;font-size:18px;text-transform:uppercase;margin:14px 0 6px;}
+  .card p{font-size:13px;line-height:1.5;}
+  .card .tag{margin-top:10px;display:inline-block;background:var(--pink);color:#fff;mix-blend-mode:var(--blend);font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:3px 8px;}
+</style></head><body><div class="wrap">
+  <nav><div class="brand">▚ Paradoxes Press</div><div class="links"><span>Index</span><span>Sims</span><span>Colophon</span></div></nav>
+  <section class="hero">
+    <span class="stamp">Issue №1 · risograph edition</span>
+    <h1><span class="off">Beautifully</span><span class="layer">Beautifully</span><br>wrong</h1>
+    <p class="sub">A two-color zine of probability paradoxes. Five stories where the obvious answer is a trap — printed, stamped, and simulated live.</p>
+    <div class="cta"><a class="p">Open Monty Hall</a><a class="s">The full index</a></div>
+  </section>
+  <section class="grid">
+    <div class="card"><div class="row"><span class="num">01</span><span class="ic">🚪</span></div><h3>Monty Hall</h3><p>Switch and win two out of three.</p><span class="tag">switch = 67%</span></div>
+    <div class="card"><div class="row"><span class="num">02</span><span class="ic">🎂</span></div><h3>Birthday</h3><p>Twenty-three for even odds.</p><span class="tag">n = 23</span></div>
+    <div class="card"><div class="row"><span class="num">03</span><span class="ic">✉️</span></div><h3>Two Envelopes</h3><p>A switch that pays nothing.</p><span class="tag">edge = 0</span></div>
+    <div class="card"><div class="row"><span class="num">04</span><span class="ic">😴</span></div><h3>Sleeping Beauty</h3><p>One half, or one third?</p><span class="tag">½ vs ⅓</span></div>
+    <div class="card"><div class="row"><span class="num">05</span><span class="ic">📊</span></div><h3>Simpson's</h3><p>The parts contradict the whole.</p><span class="tag">reversal</span></div>
+  </section>
+</div></body></html>
