@@ -44,7 +44,7 @@ export function BarComparison({
           tickFormatter={(v) => `${v}${unit}`}
         />
         <Tooltip
-          cursor={{ fill: "rgba(99,102,241,0.06)" }}
+          cursor={{ fill: "rgba(255,77,23,0.06)" }}
           formatter={(v: number) => [`${v.toFixed(2)}${unit}`, "Value"]}
           contentStyle={{ borderRadius: 12, border: "1px solid #e2e8f0" }}
         />

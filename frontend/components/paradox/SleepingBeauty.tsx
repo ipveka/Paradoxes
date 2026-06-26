@@ -45,17 +45,17 @@ export function SleepingBeauty() {
               label="P(Heads | awake)"
               value={`${(result.p_heads_given_awake * 100).toFixed(1)}%`}
               sub="≈ 33% (thirder)"
-              accent="text-emerald-600"
+              accent="text-accent"
             />
-            <StatCard label="Total awakenings" value={result.total_awakenings.toLocaleString()} accent="text-violet-600" />
-            <StatCard label="Heads / Tails tosses" value={`${result.heads_count} / ${result.tails_count}`} accent="text-slate-500" />
+            <StatCard label="Total awakenings" value={result.total_awakenings.toLocaleString()} accent="text-ink" />
+            <StatCard label="Heads / Tails tosses" value={`${result.heads_count} / ${result.tails_count}`} accent="text-slate-400" />
           </div>
           <BarComparison
             domain={[0, 60]}
             data={[
-              { name: "Halfer (1/2)", value: result.halfer_position * 100, color: "#f43f5e" },
-              { name: "Thirder (1/3)", value: result.thirder_position * 100, color: "#10b981" },
-              { name: "Simulation", value: result.p_heads_given_awake * 100, color: "#6366f1" },
+              { name: "Halfer (1/2)", value: result.halfer_position * 100, color: "#cbd5e1" },
+              { name: "Thirder (1/3)", value: result.thirder_position * 100, color: "#ff4d17" },
+              { name: "Simulation", value: result.p_heads_given_awake * 100, color: "#0f0f0f" },
             ]}
           />
         </div>

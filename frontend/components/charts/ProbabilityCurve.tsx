@@ -30,8 +30,8 @@ export function ProbabilityCurve({
       <AreaChart data={data} margin={{ top: 16, right: 16, left: 0, bottom: 8 }}>
         <defs>
           <linearGradient id="curveFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.35} />
-            <stop offset="100%" stopColor="#8b5cf6" stopOpacity={0.02} />
+            <stop offset="0%" stopColor="#ff4d17" stopOpacity={0.3} />
+            <stop offset="100%" stopColor="#ff4d17" stopOpacity={0.02} />
           </linearGradient>
         </defs>
         <XAxis
@@ -58,11 +58,11 @@ export function ProbabilityCurve({
           labelFormatter={(l) => `${xLabel ?? "x"}: ${l}`}
           contentStyle={{ borderRadius: 12, border: "1px solid #e2e8f0" }}
         />
-        <ReferenceLine y={50} stroke="#f43f5e" strokeDasharray="4 4" />
+        <ReferenceLine y={50} stroke="#0f0f0f" strokeDasharray="4 4" />
         <Area
           type="monotone"
           dataKey="y"
-          stroke="#7c3aed"
+          stroke="#ff4d17"
           strokeWidth={3}
           fill="url(#curveFill)"
           isAnimationActive
@@ -72,10 +72,10 @@ export function ProbabilityCurve({
             x={marker.x}
             y={marker.y}
             r={6}
-            fill="#7c3aed"
+            fill="#ff4d17"
             stroke="#fff"
             strokeWidth={2}
-            label={{ value: marker.label, position: "top", fontSize: 11, fill: "#7c3aed" }}
+            label={{ value: marker.label, position: "top", fontSize: 11, fill: "#ff4d17" }}
           />
         ) : null}
       </AreaChart>

@@ -9,23 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // "brand" is the single editorial accent (orange) ramp.
         brand: {
-          50: "#eef2ff",
-          100: "#e0e7ff",
-          300: "#a5b4fc",
-          500: "#6366f1",
-          600: "#4f46e5",
-          700: "#4338ca",
+          50: "#fff1ec",
+          100: "#ffe0d4",
+          300: "#ffab8f",
+          500: "#ff4d17",
+          600: "#ed3d08",
+          700: "#c4330b",
         },
-        accent: {
-          teal: "#2dd4bf",
-          pink: "#ec4899",
-          amber: "#f59e0b",
-        },
-        ink: "#1e1b3a",
+        accent: "#ff4d17",
+        ink: "#0f0f0f",
+        paper: "#fdfdfb",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "Helvetica Neue", "Arial", "sans-serif"],
+      },
+      letterSpacing: {
+        tightest: "-0.04em",
       },
       keyframes: {
         "fade-up": {

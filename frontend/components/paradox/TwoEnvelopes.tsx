@@ -44,21 +44,21 @@ export function TwoEnvelopes() {
       {result && (
         <div className="mt-6 space-y-6">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            <StatCard label="Avg. if you stay" value={result.avg_stay.toFixed(2)} accent="text-rose-500" />
-            <StatCard label="Avg. if you switch" value={result.avg_switch.toFixed(2)} accent="text-emerald-600" />
+            <StatCard label="Avg. if you stay" value={result.avg_stay.toFixed(2)} accent="text-slate-400" />
+            <StatCard label="Avg. if you switch" value={result.avg_switch.toFixed(2)} accent="text-ink" />
             <StatCard
               label="Switching edge"
               value={`${result.switch_advantage_pct >= 0 ? "+" : ""}${result.switch_advantage_pct.toFixed(2)}%`}
               sub="≈ 0 — it's a wash"
-              accent="text-slate-500"
+              accent="text-accent"
             />
           </div>
           <BarComparison
             domain={[0, domainMax]}
             unit=""
             data={[
-              { name: "Stay", value: result.avg_stay, color: "#f43f5e" },
-              { name: "Switch", value: result.avg_switch, color: "#10b981" },
+              { name: "Stay", value: result.avg_stay, color: "#cbd5e1" },
+              { name: "Switch", value: result.avg_switch, color: "#0f0f0f" },
             ]}
           />
         </div>
