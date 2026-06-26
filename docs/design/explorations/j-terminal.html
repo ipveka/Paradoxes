@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--bg:#020a05;--grn:#3dff7a;--dim:#1f8a44;--amb:#ffcf4d;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Courier New',ui-monospace,monospace;}
+  body{background:var(--bg);color:var(--grn);text-shadow:0 0 6px rgba(61,255,122,.5);}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(transparent 0 2px,rgba(0,0,0,.25) 2px 4px);}
+  .wrap{max-width:1040px;margin:0 auto;padding:30px;position:relative;z-index:1;}
+  nav{display:flex;justify-content:space-between;border:1px solid var(--dim);padding:8px 14px;font-size:13px;}
+  nav .links{display:flex;gap:18px;color:var(--dim);}
+  .hero{margin-top:44px;}
+  .line{font-size:14px;color:var(--dim);}
+  .line b{color:var(--grn);font-weight:400;}
+  h1{font-size:60px;line-height:1.05;letter-spacing:1px;margin:14px 0;font-weight:700;}
+  h1 .c{display:inline-block;width:26px;height:50px;background:var(--grn);vertical-align:-6px;box-shadow:0 0 14px var(--grn);animation:bl 1s steps(1) infinite;}
+  @keyframes bl{50%{opacity:0}}
+  .sub{font-size:15px;line-height:1.7;max-width:620px;color:#bfeccb;}
+  .sub .amb{color:var(--amb);text-shadow:0 0 6px rgba(255,207,77,.5);}
+  .cta{margin-top:22px;font-size:15px;}
+  .cta a{border:1px solid var(--grn);padding:10px 16px;margin-right:12px;color:var(--grn);text-decoration:none;display:inline-block;}
+  .cta a.amb{border-color:var(--amb);color:var(--amb);}
+  .grid{margin-top:46px;border:1px solid var(--dim);}
+  .hd{display:grid;grid-template-columns:50px 1fr 1.4fr 120px;font-size:12px;color:var(--dim);border-bottom:1px solid var(--dim);padding:8px 12px;letter-spacing:1px;}
+  .row{display:grid;grid-template-columns:50px 1fr 1.4fr 120px;padding:14px 12px;border-bottom:1px solid #0c3a1d;align-items:center;font-size:14px;}
+  .row:last-child{border-bottom:none;}
+  .row .id{color:var(--amb);}
+  .row .nm{font-size:17px;}
+  .row .ds{color:#9fd9b0;font-size:13px;}
+  .row .st{color:var(--amb);font-size:13px;}
+</style></head><body><div class="wrap">
+  <nav><div>root@paradoxes:~$</div><div class="links"><span>./monty</span><span>./birthday</span><span>./all</span></div></nav>
+  <section class="hero">
+    <div class="line">$ <b>./paradoxes --run</b></div>
+    <h1>BEAT THE ODDS<span class="c"></span></h1>
+    <p class="sub">> Five probability paradoxes, executed as live Monte-Carlo simulations.<br>> Your intuition returns <span class="amb">EXIT_WRONG (1)</span>. Run them and watch.</p>
+    <div class="cta"><a class="amb">▶ run monty_hall.py</a><a>ls ./paradoxes</a></div>
+  </section>
+  <section class="grid">
+    <div class="hd"><div>ID</div><div>NAME</div><div>DESCRIPTION</div><div>RESULT</div></div>
+    <div class="row"><div class="id">01</div><div class="nm">🚪 monty_hall</div><div class="ds">switch vs stay strategy</div><div class="st">switch=0.67</div></div>
+    <div class="row"><div class="id">02</div><div class="nm">🎂 birthday</div><div class="ds">collisions in N samples</div><div class="st">n=23 →0.507</div></div>
+    <div class="row"><div class="id">03</div><div class="nm">✉️ two_envelopes</div><div class="ds">always-switch expectation</div><div class="st">edge=0.00</div></div>
+    <div class="row"><div class="id">04</div><div class="nm">😴 sleeping_beauty</div><div class="ds">awakening-weighted prior</div><div class="st">p_h=0.33</div></div>
+    <div class="row"><div class="id">05</div><div class="nm">📊 simpsons</div><div class="ds">aggregation reversal</div><div class="st">reversal=T</div></div>
+  </section>
+</div></body></html>

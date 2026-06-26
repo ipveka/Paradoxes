@@ -6,8 +6,7 @@ Paradoxes is a small monorepo with two independently deployable services.
 Paradoxes/
 ├── backend/          FastAPI + NumPy — the simulation engine and HTTP API
 ├── frontend/         Next.js + TypeScript + Tailwind — the website
-├── legacy/streamlit/ Original Streamlit prototype (superseded)
-├── docs/             This documentation
+├── docs/             This documentation (incl. design/ system + explorations)
 └── render.yaml       Render Blueprint for one-command deploy
 ```
 

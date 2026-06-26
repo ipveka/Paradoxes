@@ -61,11 +61,11 @@ cd frontend && npm run build           # type-checks and pre-renders every page
 ```
 backend/            FastAPI service (simulations, API, tests)
 frontend/           Next.js website (pages, components, design system)
-legacy/streamlit/   Original Streamlit prototype (kept for reference)
 docs/
 ├── architecture.md   How the pieces fit together
 ├── deploy-render.md  Step-by-step Render deployment
-└── concepts.md       The mathematics behind each paradox
+├── concepts.md       The mathematics behind each paradox
+└── design/           Design system + the explored visual directions
 render.yaml         One-command deploy of both services
 ```
 

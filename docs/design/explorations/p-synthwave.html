@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--ink:#ffe9fb;--cyan:#21f0ff;--mag:#ff2bd6;--purp:#7a2bff;--sun:#ff9e3d;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Trebuchet MS',Verdana,sans-serif;}
+  body{color:var(--ink);background:linear-gradient(180deg,#1a0633 0%,#3b0a5c 42%,#7a1a6e 66%,#1a0633 67%);min-height:100vh;overflow-x:hidden;position:relative;}
+  .sun{position:absolute;top:120px;left:50%;transform:translateX(-50%);width:240px;height:240px;border-radius:50%;background:linear-gradient(180deg,var(--sun),var(--mag));z-index:0;
+    -webkit-mask:repeating-linear-gradient(#000 0 12px,transparent 12px 16px),linear-gradient(#000 60%,transparent);mask:repeating-linear-gradient(#000 0 12px,transparent 12px 16px),linear-gradient(#000 60%,transparent);-webkit-mask-composite:source-in;mask-composite:intersect;filter:drop-shadow(0 0 40px rgba(255,90,200,.6));}
+  .floor{position:absolute;top:67%;left:0;right:0;bottom:0;z-index:0;background:
+    repeating-linear-gradient(90deg,transparent 0 38px,rgba(33,240,255,.5) 38px 40px),
+    repeating-linear-gradient(0deg,transparent 0 38px,rgba(33,240,255,.5) 38px 40px);
+    transform:perspective(300px) rotateX(62deg);transform-origin:top;}
+  .wrap{max-width:1060px;margin:0 auto;padding:26px;position:relative;z-index:2;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border:1px solid var(--mag);border-radius:10px;background:rgba(30,5,50,.5);box-shadow:0 0 18px rgba(255,43,214,.4);backdrop-filter:blur(4px);}
+  .brand{font-weight:800;font-size:20px;color:var(--cyan);text-shadow:0 0 10px var(--cyan);letter-spacing:1px;}
+  .links{display:flex;gap:12px;font-size:13px;color:var(--mag);text-shadow:0 0 8px var(--mag);}
+  .hero{text-align:center;padding:60px 0 30px;}
+  .tag{font-size:13px;letter-spacing:5px;color:var(--cyan);text-shadow:0 0 8px var(--cyan);}
+  h1{font-size:78px;line-height:.95;font-weight:800;letter-spacing:-1px;margin:18px 0;
+    color:#fff;text-shadow:0 0 8px #fff,0 0 18px var(--mag),3px 3px 0 var(--purp),6px 6px 0 rgba(33,240,255,.6);text-transform:uppercase;}
+  .sub{font-size:18px;color:#f3d6ff;max-width:560px;margin:0 auto;}
+  .cta{margin-top:26px;display:flex;gap:14px;justify-content:center;}
+  .cta a{font-weight:800;font-size:15px;padding:14px 24px;border-radius:8px;text-transform:uppercase;letter-spacing:1px;}
+  .cta .p{color:#1a0633;background:linear-gradient(90deg,var(--cyan),#9af);box-shadow:0 0 20px var(--cyan);}
+  .cta .s{color:var(--cyan);border:1px solid var(--cyan);box-shadow:0 0 14px rgba(33,240,255,.5);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:120px;}
+  .card{padding:22px;border-radius:12px;background:rgba(30,5,55,.55);border:1px solid var(--mag);box-shadow:0 0 16px rgba(255,43,214,.35);backdrop-filter:blur(4px);}
+  .ic{font-size:32px;filter:drop-shadow(0 0 8px var(--mag));}
+  .card h3{margin:12px 0 5px;font-size:19px;color:var(--cyan);text-shadow:0 0 8px rgba(33,240,255,.6);}
+  .card p{font-size:14px;color:#e9cfff;}
+</style></head><body>
+  <div class="sun"></div><div class="floor"></div>
+  <div class="wrap">
+  <nav><div class="brand">🧩 PARADOXES</div><div class="links"><span>MONTY</span><span>BIRTHDAY</span><span>ALL 5</span></div></nav>
+  <section class="hero">
+    <div class="tag">R I D E   T H E   O D D S</div>
+    <h1>Outrun your<br>intuition</h1>
+    <p class="sub">Five probability paradoxes with an '80s neon glow — and real simulations humming under the hood.</p>
+    <div class="cta"><a class="p">▶ Play Monty Hall</a><a class="s">Browse all five</a></div>
+  </section>
+  <section class="grid">
+    <div class="card"><div class="ic">🚪</div><h3>Monty Hall</h3><p>Switch and win two thirds.</p></div>
+    <div class="card"><div class="ic">🎂</div><h3>Birthday</h3><p>23 people, even odds.</p></div>
+    <div class="card"><div class="ic">✉️</div><h3>Two Envelopes</h3><p>A switch worth nothing.</p></div>
+    <div class="card"><div class="ic">😴</div><h3>Sleeping Beauty</h3><p>One half or one third?</p></div>
+    <div class="card"><div class="ic">📊</div><h3>Simpson's</h3><p>Parts vs whole disagree.</p></div>
+  </section>
+</div></body></html>

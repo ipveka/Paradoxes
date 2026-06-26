@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--bg:#0a2a52;--ln:#9fc4ff;--wht:#eaf2ff;--cy:#5fe0ff;--dim:#4a73ad;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:ui-monospace,'Courier New',monospace;}
+  body{background:var(--bg);color:var(--wht);
+    background-image:linear-gradient(rgba(159,196,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(159,196,255,.10) 1px,transparent 1px);background-size:28px 28px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:30px;}
+  nav{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--ln);padding:10px 16px;font-size:13px;color:var(--ln);}
+  nav .brand{color:var(--wht);font-weight:700;letter-spacing:2px;}
+  nav .links{display:flex;gap:18px;}
+  .hero{margin-top:48px;border:1px solid var(--ln);position:relative;padding:40px 34px;}
+  .hero::before{content:'';position:absolute;top:-5px;left:-5px;width:14px;height:14px;border-top:2px solid var(--cy);border-left:2px solid var(--cy);}
+  .hero::after{content:'';position:absolute;bottom:-5px;right:-5px;width:14px;height:14px;border-bottom:2px solid var(--cy);border-right:2px solid var(--cy);}
+  .tag{font-size:12px;letter-spacing:3px;color:var(--cy);}
+  h1{font-size:62px;line-height:1.02;letter-spacing:-1px;margin:14px 0;font-weight:700;text-transform:uppercase;}
+  h1 .d{color:var(--cy);}
+  .dim{position:absolute;right:34px;top:50px;font-size:11px;color:var(--dim);text-align:right;line-height:1.8;}
+  .sub{font-size:15px;line-height:1.7;max-width:600px;color:#c8dcff;}
+  .cta{margin-top:22px;}
+  .cta a{border:1px solid var(--cy);color:var(--cy);padding:11px 18px;margin-right:12px;font-size:14px;text-decoration:none;display:inline-block;letter-spacing:1px;}
+  .cta a.f{background:var(--cy);color:var(--bg);font-weight:700;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;}
+  .card{border:1px solid var(--ln);padding:18px;position:relative;}
+  .card::before{content:'';position:absolute;top:-4px;left:-4px;width:10px;height:10px;border-top:2px solid var(--cy);border-left:2px solid var(--cy);}
+  .fig{font-size:11px;color:var(--cy);letter-spacing:2px;}
+  .ic{font-size:30px;margin:12px 0;filter:drop-shadow(0 0 6px rgba(95,224,255,.5));}
+  .card h3{font-size:18px;text-transform:uppercase;letter-spacing:1px;}
+  .card p{font-size:12.5px;color:#aac4ee;margin-top:6px;line-height:1.5;}
+  .card .sp{margin-top:10px;font-size:11px;color:var(--dim);border-top:1px dashed var(--dim);padding-top:8px;}
+</style></head><body><div class="wrap">
+  <nav><div class="brand">⌖ PARADOXES</div><div class="links"><span>SHEET 1/5</span><span>SCALE 1:1</span><span>REV. A</span></div></nav>
+  <section class="hero">
+    <div class="tag">TECHNICAL SPECIFICATION — PROBABILITY</div>
+    <h1>Engineering<br>your <span class="d">intuition</span></h1>
+    <div class="dim">┌─ 5 paradoxes ─┐<br>│ tol. ±0.02 │<br>└ monte-carlo ─┘</div>
+    <p class="sub">Five paradoxes drafted to spec and verified by simulation. Every counterintuitive claim measured, dimensioned, and proven.</p>
+    <div class="cta"><a class="f">▶ RUN MONTY HALL</a><a>VIEW INDEX</a></div>
+  </section>
+  <section class="grid">
+    <div class="card"><div class="fig">FIG.01</div><div class="ic">🚪</div><h3>Monty Hall</h3><p>Switch-door strategy.</p><div class="sp">switch_rate = 0.667</div></div>
+    <div class="card"><div class="fig">FIG.02</div><div class="ic">🎂</div><h3>Birthday</h3><p>Pairwise collisions.</p><div class="sp">n = 23 → P 0.507</div></div>
+    <div class="card"><div class="fig">FIG.03</div><div class="ic">✉️</div><h3>Two Envelopes</h3><p>Switch expectation.</p><div class="sp">edge = 0.000</div></div>
+    <div class="card"><div class="fig">FIG.04</div><div class="ic">😴</div><h3>Sleeping Beauty</h3><p>Self-locating prior.</p><div class="sp">P(H) = 0.333</div></div>
+    <div class="card"><div class="fig">FIG.05</div><div class="ic">📊</div><h3>Simpson's</h3><p>Aggregation reversal.</p><div class="sp">reversal = TRUE</div></div>
+  </section>
+</div></body></html>

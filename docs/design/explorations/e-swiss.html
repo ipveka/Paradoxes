@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--ink:#111;--paper:#f2f2ef;--red:#e8330a;--mut:#888;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;}
+  body{background:var(--paper);color:var(--ink);}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 36px;}
+  nav{display:flex;justify-content:space-between;align-items:flex-start;border-top:3px solid var(--ink);padding-top:12px;}
+  nav .brand{font-size:15px;font-weight:700;letter-spacing:-.3px;text-transform:uppercase;}
+  nav .links{display:flex;gap:30px;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--mut);}
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:60px;align-items:end;}
+  h1{font-size:104px;line-height:.88;letter-spacing:-5px;font-weight:700;text-transform:uppercase;}
+  h1 .r{color:var(--red);}
+  .right{padding-bottom:10px;}
+  .right .n{font-size:13px;letter-spacing:.5px;color:var(--mut);text-transform:uppercase;margin-bottom:14px;}
+  .right p{font-size:20px;line-height:1.4;font-weight:500;}
+  .right a{display:inline-block;margin-top:20px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid var(--red);padding-bottom:3px;color:var(--ink);text-decoration:none;}
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);margin-top:64px;border-top:1px solid var(--ink);}
+  .col{border-right:1px solid #ccc;padding:18px 14px 26px;min-height:200px;display:flex;flex-direction:column;}
+  .col:last-child{border-right:none;}
+  .col .idx{font-size:12px;color:var(--red);font-weight:700;}
+  .col .em{font-size:30px;margin:18px 0;}
+  .col h3{font-size:17px;font-weight:700;letter-spacing:-.5px;margin-top:auto;}
+  .col p{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.4;}
+</style></head><body><div class="wrap">
+  <nav><div class="brand">Paradoxes — Probability Studio</div><div class="links"><span>Index</span><span>Simulations</span><span>About</span><span>GitHub</span></div></nav>
+  <section class="hero">
+    <h1>Para<span class="r">do</span>xes</h1>
+    <div class="right"><div class="n">Five studies in probability · est. 2026</div>
+      <p>Where intuition and mathematics quietly disagree — and the simulation decides the winner.</p>
+      <a>Begin → Monty Hall</a></div>
+  </section>
+  <section class="grid">
+    <div class="col"><div class="idx">01</div><div class="em">🚪</div><h3>Monty Hall</h3><p>Switching wins two thirds.</p></div>
+    <div class="col"><div class="idx">02</div><div class="em">🎂</div><h3>Birthday</h3><p>23 people, even odds.</p></div>
+    <div class="col"><div class="idx">03</div><div class="em">✉️</div><h3>Two Envelopes</h3><p>A switch worth nothing.</p></div>
+    <div class="col"><div class="idx">04</div><div class="em">😴</div><h3>Sleeping Beauty</h3><p>One half or one third.</p></div>
+    <div class="col"><div class="idx">05</div><div class="em">📊</div><h3>Simpson's</h3><p>Parts contradict whole.</p></div>
+  </section>
+</div></body></html>

@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root{--bg:#f1f0f4;--ink:#1b1b22;--mut:#6b6b78;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:ui-sans-serif,system-ui,'Segoe UI',sans-serif;}
+  body{background:var(--bg);color:var(--ink);}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:6px 4px 20px;}
+  .brand{font-weight:800;font-size:20px;}
+  .links{display:flex;gap:18px;font-size:14px;color:var(--mut);}
+  .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:16px;}
+  .tile{border-radius:24px;padding:22px;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;}
+  .hero{grid-column:span 2;grid-row:span 2;background:linear-gradient(135deg,#6366f1,#a855f7 55%,#ec4899);}
+  .hero .tag{font-size:13px;opacity:.9;font-weight:600;}
+  .hero h1{font-size:42px;line-height:1.04;font-weight:800;margin:8px 0 14px;letter-spacing:-1px;}
+  .hero .btn{align-self:flex-start;background:#fff;color:#4f46e5;font-weight:700;font-size:14px;padding:10px 18px;border-radius:30px;}
+  .stat{grid-column:span 2;background:#111016;display:flex;flex-direction:row;align-items:center;gap:18px;justify-content:space-around;}
+  .stat .big{font-size:40px;font-weight:800;}
+  .stat .s{font-size:12px;color:#9b9ba8;}
+  .stat .c1{color:#fb7185}.stat .c2{color:#34d399}
+  .t-monty{background:linear-gradient(135deg,#4f46e5,#7c3aed);}
+  .t-bday{background:linear-gradient(135deg,#ec4899,#f43f5e);}
+  .t-env{background:linear-gradient(135deg,#f59e0b,#ea580c);}
+  .t-beauty{background:linear-gradient(135deg,#8b5cf6,#6d28d9);}
+  .t-simp{background:linear-gradient(135deg,#0d9488,#0891b2);grid-column:span 2;}
+  .tile .em{position:absolute;top:18px;right:20px;font-size:34px;opacity:.95;}
+  .tile h3{font-size:19px;font-weight:800;}
+  .tile p{font-size:13px;opacity:.85;margin-top:3px;}
+</style></head><body><div class="wrap">
+  <nav><div class="brand">🧩 Paradoxes</div><div class="links"><span>Monty</span><span>Birthday</span><span>All five</span><span>GitHub</span></div></nav>
+  <section class="bento">
+    <div class="tile hero"><div class="tag">✦ Interactive probability</div><h1>Where intuition meets mathematics</h1><div class="btn">Start exploring →</div></div>
+    <div class="tile t-monty"><span class="em">🚪</span><h3>Monty Hall</h3><p>Switch &amp; win two thirds</p></div>
+    <div class="tile t-bday"><span class="em">🎂</span><h3>Birthday</h3><p>23 people, even odds</p></div>
+    <div class="tile stat"><div><div class="big c1">33%</div><div class="s">stay win rate</div></div><div><div class="big c2">67%</div><div class="s">switch win rate</div></div><div><div class="big">10k</div><div class="s">live sims</div></div></div>
+    <div class="tile t-env"><span class="em">✉️</span><h3>Two Envelopes</h3><p>A switch worth nothing</p></div>
+    <div class="tile t-beauty"><span class="em">😴</span><h3>Sleeping Beauty</h3><p>Half or a third?</p></div>
+    <div class="tile t-simp"><span class="em">📊</span><h3>Simpson's Paradox</h3><p>When the parts and the whole disagree</p></div>
+  </section>
+</div></body></html>
