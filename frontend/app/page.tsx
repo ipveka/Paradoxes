@@ -1,50 +1,38 @@
 import Link from "next/link";
 import { PARADOXES } from "@/lib/paradoxes";
-import { ParadoxCard } from "@/components/ParadoxCard";
+import { IndexRow } from "@/components/IndexRow";
 import { Reveal } from "@/components/Reveal";
 
 export default function HomePage() {
   return (
-    <div className="mx-auto max-w-6xl px-4">
-      {/* Hero */}
-      <section className="py-20 text-center sm:py-28">
+    <div className="mx-auto max-w-6xl px-4 sm:px-8">
+      {/* Hero wordmark */}
+      <section className="pt-12 sm:pt-16">
         <Reveal>
-          <span className="inline-block rounded-full border border-brand-100 bg-white/70 px-4 py-1.5 text-sm font-medium text-brand-600 shadow-sm">
-            🧩 Interactive probability, powered by live simulations
-          </span>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <h1 className="mx-auto mt-6 max-w-3xl text-5xl font-extrabold tracking-tight sm:text-6xl">
-            Where intuition meets <span className="gradient-text">mathematics</span>
+          <h1 className="font-extrabold uppercase leading-[0.82] tracking-tightest text-[clamp(3.25rem,13vw,9.5rem)]">
+            Para<span className="accent-text">dox</span>es
           </h1>
         </Reveal>
-        <Reveal delay={0.1}>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-            Five famous paradoxes that fool almost everyone. Run real Monte Carlo
-            simulations, watch the charts move, and discover why your gut is wrong.
-          </p>
-        </Reveal>
-        <Reveal delay={0.15}>
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <Link href={`/paradoxes/${PARADOXES[0].slug}`} className="btn-primary">
-              Start with Monty Hall
+        <Reveal delay={0.05}>
+          <div className="mt-6 flex flex-col gap-6 border-b-[3px] border-ink pb-8 sm:flex-row sm:items-end sm:justify-between">
+            <p className="max-w-md text-lg font-medium leading-snug sm:text-xl">
+              Five probability puzzles that prove your intuition wrong — with live
+              simulations to settle every one.
+            </p>
+            <Link href={`/paradoxes/${PARADOXES[0].slug}`} className="btn-primary shrink-0">
+              Start → Monty Hall
             </Link>
-            <a href="#paradoxes" className="btn-ghost">
-              Browse all five
-            </a>
           </div>
         </Reveal>
       </section>
 
-      {/* Grid */}
-      <section id="paradoxes" className="scroll-mt-20 pb-24">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PARADOXES.map((paradox, i) => (
-            <Reveal key={paradox.slug} delay={i * 0.05}>
-              <ParadoxCard paradox={paradox} />
-            </Reveal>
-          ))}
-        </div>
+      {/* Numbered index */}
+      <section id="index" className="scroll-mt-20 pb-24 pt-2">
+        {PARADOXES.map((paradox, i) => (
+          <Reveal key={paradox.slug} delay={i * 0.04}>
+            <IndexRow paradox={paradox} index={i} />
+          </Reveal>
+        ))}
       </section>
     </div>
   );

@@ -80,7 +80,7 @@ export function Birthday() {
             <StatCard
               label="Theoretical"
               value={`${(result.theoretical_probability * 100).toFixed(1)}%`}
-              accent="text-violet-600"
+              accent="text-ink"
             />
             <StatCard
               label="Difference"

@@ -68,13 +68,13 @@ export function Simpsons() {
                 contentStyle={{ borderRadius: 12, border: "1px solid #e2e8f0" }}
               />
               <Legend />
-              <Bar dataKey="Men" fill="#6366f1" radius={[8, 8, 0, 0]} />
-              <Bar dataKey="Women" fill="#ec4899" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="Men" fill="#0f0f0f" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="Women" fill="#ff4d17" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
 
           {data?.paradox && (
-            <div className="mt-4 rounded-xl border border-teal-200 bg-teal-50 p-4 text-sm text-teal-900">
+            <div className="mt-4 border-l-4 border-accent bg-brand-50 p-4 text-sm">
               🤯 <strong>Paradox confirmed:</strong> women are admitted at a higher rate
               in every department, but men have the higher overall rate — because women
               applied mostly to the more selective department.

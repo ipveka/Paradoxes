@@ -1,34 +1,29 @@
 import Link from "next/link";
-import { PARADOXES } from "@/lib/paradoxes";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/70 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex items-center gap-2 font-bold">
-          <span className="text-xl">🧩</span>
-          <span className="gradient-text text-lg">Paradoxes</span>
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-8">
+        <Link href="/" className="flex items-center gap-2 text-base font-extrabold tracking-tight">
+          <span>🧩</span>
+          <span>Paradoxes</span>
         </Link>
-        <div className="hidden items-center gap-1 md:flex">
-          {PARADOXES.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/paradoxes/${p.slug}`}
-              className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
-            >
-              <span className="mr-1">{p.emoji}</span>
-              {p.name}
-            </Link>
-          ))}
+        <div className="flex items-center gap-5 text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+          <Link href="/#index" className="transition-colors hover:text-accent">
+            Index
+          </Link>
+          <Link href="/paradoxes/monty-hall" className="hidden transition-colors hover:text-accent sm:inline">
+            Simulations
+          </Link>
+          <a
+            href="https://github.com/ipveka/paradoxes"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-accent"
+          >
+            GitHub
+          </a>
         </div>
-        <a
-          href="https://github.com/ipveka/paradoxes"
-          target="_blank"
-          rel="noreferrer"
-          className="btn-ghost text-sm"
-        >
-          GitHub
-        </a>
       </nav>
     </header>
   );

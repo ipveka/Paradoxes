@@ -175,21 +175,21 @@ export function MontyHall() {
                 label="Stay win rate"
                 value={`${(result.stay_rate * 100).toFixed(1)}%`}
                 sub="≈ 33% (theory)"
-                accent="text-rose-500"
+                accent="text-slate-400"
               />
               <StatCard
                 label="Switch win rate"
                 value={`${(result.switch_rate * 100).toFixed(1)}%`}
                 sub="≈ 67% (theory)"
-                accent="text-emerald-600"
+                accent="text-accent"
               />
             </div>
             <BarComparison
               referenceY={50}
               referenceLabel="50%"
               data={[
-                { name: "Stay", value: result.stay_rate * 100, color: "#f43f5e" },
-                { name: "Switch", value: result.switch_rate * 100, color: "#10b981" },
+                { name: "Stay", value: result.stay_rate * 100, color: "#cbd5e1" },
+                { name: "Switch", value: result.switch_rate * 100, color: "#ff4d17" },
               ]}
             />
           </div>
