@@ -19,7 +19,7 @@ counterintuitive answer emerge from real data.
 | ----- | ---- |
 | Frontend | Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion · Recharts |
 | Backend | FastAPI · NumPy · Pydantic |
-| Deploy | Render Blueprint (two web services) |
+| Deploy | Vercel (all-in-one) or Render (two services) |
 
 The simulations run server-side in Python and are exposed as a small JSON API;
 the frontend calls that API and animates the results. See

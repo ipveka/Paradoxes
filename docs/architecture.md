@@ -1,22 +1,29 @@
 # Architecture
 
-Paradoxes is a small monorepo with two independently deployable services.
+Paradoxes is a small monorepo: a Next.js frontend and a FastAPI backend that can
+be deployed either as one Vercel project or as two Render services.
 
 ```
 Paradoxes/
 ├── backend/          FastAPI + NumPy — the simulation engine and HTTP API
 ├── frontend/         Next.js + TypeScript + Tailwind — the website
+├── api/              Vercel Python function that reuses backend/ (Vercel only)
 ├── docs/             This documentation (incl. design/ system + explorations)
-└── render.yaml       Render Blueprint for one-command deploy
+├── vercel.json       All-in-one Vercel config (site + API function)
+└── render.yaml       Two-service Render Blueprint
 ```
 
-## Why two services?
+## Why a separate backend?
 
 The Monte Carlo simulations are the "real" artifact — they're the proof that the
-counterintuitive answers are correct. Running them server-side in Python keeps
-the math in one tested place, lets the browser stay light, and makes the API
-reusable (notebooks, CLIs, other frontends). The frontend is then a pure
-presentation layer that calls the API and animates the results.
+counterintuitive answers are correct. Running them in Python keeps the math in
+one tested place, lets the browser stay light, and makes the API reusable
+(notebooks, CLIs, other frontends). The frontend is then a pure presentation
+layer that calls the API and animates the results.
+
+The backend is the single source of truth regardless of host: on Render it runs
+as a long-lived service; on Vercel the same `backend/app` is served by a Python
+serverless function (`api/index.py`). See the deploy guides in `docs/`.
 
 ## Backend (`backend/`)
 
