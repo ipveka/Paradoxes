@@ -59,21 +59,29 @@ cd frontend && npm run build           # type-checks and pre-renders every page
 ## Project layout
 
 ```
+api/                Vercel Python function (reuses backend/ — Vercel deploy only)
 backend/            FastAPI service (simulations, API, tests)
 frontend/           Next.js website (pages, components, design system)
 docs/
 ├── architecture.md   How the pieces fit together
-├── deploy-render.md  Step-by-step Render deployment
+├── deploy-vercel.md  All-in-one Vercel deployment
+├── deploy-render.md  Two-service Render deployment
 ├── concepts.md       The mathematics behind each paradox
 └── design/           Design system + the explored visual directions
-render.yaml         One-command deploy of both services
+vercel.json         All-in-one Vercel config (site + API function)
+render.yaml         Two-service Render Blueprint
 ```
 
 ## Deploy
 
-A [`render.yaml`](render.yaml) Blueprint provisions both services on Render's
-free plan. Full walkthrough — including the two environment variables to set — is
-in [`docs/deploy-render.md`](docs/deploy-render.md).
+Two supported options:
+
+- **Vercel (all-in-one):** one project hosting the site and the API as a Python
+  serverless function. Set `NEXT_PUBLIC_API_URL=/` and deploy. Walkthrough in
+  [`docs/deploy-vercel.md`](docs/deploy-vercel.md).
+- **Render (two services):** a [`render.yaml`](render.yaml) Blueprint runs the
+  backend as a long-lived service plus the frontend. Walkthrough in
+  [`docs/deploy-render.md`](docs/deploy-render.md).
 
 ## Adding a new paradox
 
