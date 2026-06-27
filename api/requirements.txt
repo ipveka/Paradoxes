@@ -1,0 +1,5 @@
+# Runtime deps for the Vercel Python function. Mirrors backend/requirements.txt
+# minus uvicorn (Vercel provides the ASGI server).
+fastapi>=0.110
+numpy>=1.24
+pydantic>=2.6
