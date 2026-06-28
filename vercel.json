@@ -1,18 +1,11 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "frontend/package.json", "use": "@vercel/next" },
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": { "includeFiles": "backend/**" }
-    }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "api/index.py" },
-    { "src": "/health", "dest": "api/index.py" },
-    { "src": "/openapi.json", "dest": "api/index.py" },
-    { "src": "/docs", "dest": "api/index.py" },
-    { "handle": "filesystem" }
+  "functions": {
+    "api/index.py": { "includeFiles": "backend/**" }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" },
+    { "source": "/health", "destination": "/api/index" },
+    { "source": "/openapi.json", "destination": "/api/index" },
+    { "source": "/docs", "destination": "/api/index" }
   ]
 }

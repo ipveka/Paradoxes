@@ -1,10 +1,11 @@
 // Thin client for the FastAPI backend. The base URL is baked at build time from
 // NEXT_PUBLIC_API_URL (see .env.example):
-//   - unset            → local dev default (http://localhost:8000)
-//   - "/" or ""        → same-origin relative calls (the all-in-one Vercel deploy)
-//   - an absolute URL  → that backend (e.g. a separate Render service)
+//   - unset / "/" / ""  → same-origin relative calls ("/api/..."), so the
+//                         all-in-one Vercel deploy needs no configuration
+//   - an absolute URL   → that backend (local dev → http://localhost:8000;
+//                         a separate Render service → its API URL)
 const configured = process.env.NEXT_PUBLIC_API_URL;
-const API_BASE = (configured ?? "http://localhost:8000").replace(/\/$/, "");
+const API_BASE = (configured ?? "").replace(/\/$/, "");
 
 async function handle<T>(res: Response): Promise<T> {
   if (!res.ok) {

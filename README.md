@@ -40,8 +40,9 @@ uvicorn app.main:app --reload          # http://localhost:8000  (docs at /docs)
 
 ### 2. Frontend (website on :3000)
 
+The Next.js app lives at the repository root. From a second terminal:
+
 ```bash
-cd frontend
 npm install
 cp .env.example .env.local             # defaults to http://localhost:8000
 npm run dev                            # http://localhost:3000
@@ -53,22 +54,27 @@ Open http://localhost:3000, head to **Monty Hall**, and hit *Run simulation*.
 
 ```bash
 cd backend && pytest                   # simulation math + API contract
-cd frontend && npm run build           # type-checks and pre-renders every page
+npm run build                          # type-checks and pre-renders every page
 ```
 
 ## Project layout
 
+The Next.js app sits at the repository root (Vercel's canonical layout); the
+Python lives under `backend/`.
+
 ```
-api/                Vercel Python function (reuses backend/ — Vercel deploy only)
+app/                Next.js App Router pages
+components/          React components (charts, paradox widgets, layout)
+lib/                Typed API client + paradox registry
+api/                Vercel Python function (reuses backend/ on Vercel)
 backend/            FastAPI service (simulations, API, tests)
-frontend/           Next.js website (pages, components, design system)
 docs/
 ├── architecture.md   How the pieces fit together
 ├── deploy-vercel.md  All-in-one Vercel deployment
 ├── deploy-render.md  Two-service Render deployment
 ├── concepts.md       The mathematics behind each paradox
 └── design/           Design system + the explored visual directions
-vercel.json         All-in-one Vercel config (site + API function)
+vercel.json         All-in-one Vercel config (rewrites + the API function)
 render.yaml         Two-service Render Blueprint
 ```
 
@@ -77,8 +83,8 @@ render.yaml         Two-service Render Blueprint
 Two supported options:
 
 - **Vercel (all-in-one):** one project hosting the site and the API as a Python
-  serverless function. Set `NEXT_PUBLIC_API_URL=/` and deploy. Walkthrough in
-  [`docs/deploy-vercel.md`](docs/deploy-vercel.md).
+  serverless function. Just import the repo and deploy — `vercel.json` wires the
+  API. Walkthrough in [`docs/deploy-vercel.md`](docs/deploy-vercel.md).
 - **Render (two services):** a [`render.yaml`](render.yaml) Blueprint runs the
   backend as a long-lived service plus the frontend. Walkthrough in
   [`docs/deploy-render.md`](docs/deploy-render.md).

@@ -3,13 +3,18 @@
 Paradoxes is a small monorepo: a Next.js frontend and a FastAPI backend that can
 be deployed either as one Vercel project or as two Render services.
 
+The Next.js app sits at the repository root (Vercel's canonical layout); the
+Python lives under `backend/`.
+
 ```
 Paradoxes/
+├── app/              Next.js App Router pages
+├── components/       React components (charts, paradox widgets, layout)
+├── lib/              Typed API client + paradox registry
 ├── backend/          FastAPI + NumPy — the simulation engine and HTTP API
-├── frontend/         Next.js + TypeScript + Tailwind — the website
 ├── api/              Vercel Python function that reuses backend/ (Vercel only)
 ├── docs/             This documentation (incl. design/ system + explorations)
-├── vercel.json       All-in-one Vercel config (site + API function)
+├── vercel.json       All-in-one Vercel config (rewrites + the API function)
 └── render.yaml       Two-service Render Blueprint
 ```
 
@@ -58,7 +63,7 @@ that knows about HTTP. This keeps the math unit-testable in isolation.
 
 Interactive docs are auto-generated at `/docs` (Swagger UI).
 
-## Frontend (`frontend/`)
+## Frontend (repository root)
 
 Next.js App Router with static generation for each paradox page.
 

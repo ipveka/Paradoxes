@@ -23,7 +23,7 @@ services:
   - type: web
     name: paradoxes-web
     runtime: node
-    rootDir: frontend
+    rootDir: .
     plan: free
     buildCommand: npm ci && npm run build
     startCommand: npm start

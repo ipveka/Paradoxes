@@ -4,8 +4,8 @@ Before settling on a visual direction, we explored **24** of them as standalone
 HTML mockups of the home page. They're preserved here in `explorations/` for
 reference — open any `.html` file in a browser to view it.
 
-The chosen direction is **X · Big-Type Editorial**, now implemented in
-`frontend/`. Its spec lives in [`DESIGN.md`](./DESIGN.md).
+The chosen direction is **X · Big-Type Editorial**, now implemented in the
+Next.js app at the repo root. Its spec lives in [`DESIGN.md`](./DESIGN.md).
 
 ## The 24 directions
 
