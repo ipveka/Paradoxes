@@ -23,13 +23,11 @@ export function BarComparison({
   domain = [0, 100],
   unit = "%",
   referenceY,
-  referenceLabel,
 }: {
   data: BarDatum[];
   domain?: [number, number];
   unit?: string;
   referenceY?: number;
-  referenceLabel?: string;
 }) {
   return (
     <ResponsiveContainer width="100%" height={320}>
@@ -49,12 +47,10 @@ export function BarComparison({
           contentStyle={{ borderRadius: 12, border: "1px solid #e2e8f0" }}
         />
         {referenceY !== undefined ? (
-          <ReferenceLine
-            y={referenceY}
-            stroke="#94a3b8"
-            strokeDasharray="4 4"
-            label={{ value: referenceLabel, position: "right", fontSize: 11, fill: "#94a3b8" }}
-          />
+          // The Y axis already labels this value (e.g. "50%"), so the dashed
+          // line needs no extra label — which also avoids clipping on narrow
+          // (mobile) charts.
+          <ReferenceLine y={referenceY} stroke="#94a3b8" strokeDasharray="4 4" />
         ) : null}
         <Bar dataKey="value" radius={[10, 10, 0, 0]} isAnimationActive>
           {data.map((d) => (

@@ -186,7 +186,6 @@ export function MontyHall() {
             </div>
             <BarComparison
               referenceY={50}
-              referenceLabel="50%"
               data={[
                 { name: "Stay", value: result.stay_rate * 100, color: "#cbd5e1" },
                 { name: "Switch", value: result.switch_rate * 100, color: "#ff4d17" },
