@@ -26,8 +26,8 @@ personality. No gradients, no decoration for its own sake.
 | `brand-50` | `#fff1ec` | Accent callout backgrounds |
 | `slate-400/500` | Tailwind | Muted labels, secondary text, "loser" bars |
 
-Defined in `frontend/tailwind.config.ts` (the `brand` ramp is the orange accent)
-and `frontend/app/globals.css`.
+Defined in `tailwind.config.ts` (the `brand` ramp is the orange accent)
+and `app/globals.css`.
 
 ## Typography
 
@@ -54,7 +54,7 @@ Recharts, recolored to the palette:
 - **Loser / neutral** → `#cbd5e1` (muted) or `#0f0f0f` (ink).
 - Reference lines → ink dashed.
 
-See `frontend/components/charts/` and the per-paradox widgets.
+See `components/charts/` and the per-paradox widgets.
 
 ## Applying it elsewhere
 
