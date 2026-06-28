@@ -12,9 +12,6 @@ export function Navbar() {
           <Link href="/#index" className="transition-colors hover:text-accent">
             Index
           </Link>
-          <Link href="/paradoxes/monty-hall" className="hidden transition-colors hover:text-accent sm:inline">
-            Simulations
-          </Link>
           <a
             href="https://github.com/ipveka/paradoxes"
             target="_blank"
